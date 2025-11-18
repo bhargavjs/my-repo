@@ -10,6 +10,15 @@ pipeline {
     }
 
     stages {
+        stage('Clean Workspace') {
+    steps {
+        deleteDir()
+    }
+}
+
+
+
+        
         stage('Checkout') {
             steps {
                 git branch: "${params.BRANCH}", url: 'https://github.com/bhargavjs/my-repo.git'
